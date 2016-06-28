@@ -11,6 +11,6 @@ func Index(c echo.Context) error {
 	// template to write
 	p := &templates.Main{}
 
-	// converts buf to a string, so c.HTML can render it to the browser
+	// renders the template as a response
 	return c.HTML(http.StatusOK, templates.PageTemplate(p))
 }
