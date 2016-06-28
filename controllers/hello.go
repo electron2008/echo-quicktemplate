@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"bytes"
 	"net/http"
 
 	"github.com/abenz1267/echo-quicktemplate/templates"
@@ -14,13 +13,10 @@ func Hello(c echo.Context) error {
 	vars["title"] = "Hello-World"
 	vars["name"] = c.Param("name")
 
-	buf := new(bytes.Buffer)
-
-	// Template to render + map "vars" to struct-field Vars
+	// Template to render + map "vars" to struct-field "Vars"
 	p := &templates.Hello{
 		Vars: vars,
 	}
 
-	templates.WritePageTemplate(buf, p)
-	return c.HTML(http.StatusOK, buf.String())
+	return c.HTML(http.StatusOK, templates.PageTemplate(p))
 }

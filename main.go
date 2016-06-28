@@ -11,6 +11,7 @@ func main() {
 	e := echo.New()
 
 	e.Use(middleware.Gzip())
+	e.Pre(middleware.RemoveTrailingSlash())
 
 	e.GET("/:name", controllers.Hello)
 	e.GET("/", controllers.Index)
