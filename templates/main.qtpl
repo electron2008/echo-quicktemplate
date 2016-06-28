@@ -1,0 +1,17 @@
+
+// Main page template. Implements BasePage methods.
+
+{% code
+type Main struct {
+	//CTX *fasthttp.RequestCtx
+  Vars map[string]interface{}
+}
+%}
+
+
+{% func (p *Main) Body() %}
+	<h1>Main Page</h1>
+	<div>
+		Some Body-Content
+	</div>
+{% endfunc %}

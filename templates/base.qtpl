@@ -1,0 +1,32 @@
+This is a base page template. All the other template pages implement this interface.
+
+{% interface
+Page {
+	Body()
+}
+%}
+
+
+Page prints a page implementing Page interface.
+{% func PageTemplate(p Page) %}
+<html>
+	<head>
+		<title>Echo+Quicktemplate</title>
+	</head>
+	<body>
+		<div>
+			Some fancy menu
+		</div>
+		{%= p.Body() %}
+	</body>
+	<footer>
+		Some fancy footer
+	</footer>
+</html>
+{% endfunc %}
+
+
+Base page implementation. Other pages may inherit from it if they need
+overriding only certain Page methods
+{% code type Base struct {} %}
+{% func (p *Base) Body() %}This is a base body{% endfunc %}

@@ -1,0 +1,16 @@
+// Main page template. Implements BasePage methods.
+
+{% code
+type Hello struct {
+	//CTX *fasthttp.RequestCtx
+  Vars map[string]interface{}
+}
+%}
+
+
+{% func (p *Hello) Body() %}
+	<h1>{%v p.Vars["title"] %}</h1>
+	<div>
+		Hello {%v p.Vars["name"] %}!
+	</div>
+{% endfunc %}
