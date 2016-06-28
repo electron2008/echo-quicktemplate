@@ -1,1 +1,4 @@
-This is an example showing how to work with Echo and Quicktemplate
+This is a simple example showing how to work with Echo and Quicktemplate incl. template-inheritance.
+
+https://github.com/labstack/echo
+https://github.com/valyala/quicktemplate
