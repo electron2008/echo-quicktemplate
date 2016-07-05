@@ -2,7 +2,6 @@
 
 {% code
 type Hello struct {
-	//CTX *fasthttp.RequestCtx
   Vars map[string]interface{}
 }
 %}

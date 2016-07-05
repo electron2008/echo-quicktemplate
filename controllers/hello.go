@@ -1,8 +1,6 @@
 package controllers
 
 import (
-	"net/http"
-
 	"github.com/abenz1267/echo-quicktemplate/templates"
 	"github.com/labstack/echo"
 )
@@ -18,5 +16,6 @@ func Hello(c echo.Context) error {
 		Vars: vars,
 	}
 
-	return c.HTML(http.StatusOK, templates.PageTemplate(p))
+	// renders the template as a response
+	return Render(c, p)
 }
